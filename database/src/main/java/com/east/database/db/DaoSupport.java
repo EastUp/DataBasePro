@@ -72,7 +72,7 @@ public class DaoSupport<T> implements IDaoSupport<T> {
             String name = field.getName();
             String type = field.getType().getSimpleName();
             // type需要进行转换 int --> integer, String text;
-            sb.append(name).append(" ").append(type).append(", ");
+            sb.append(name).append(" ").append(DaoUtil.getColumnType(type)).append(", ");
         }
 
         sb.replace(sb.length()-2,sb.length(),")");
