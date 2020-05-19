@@ -9,8 +9,8 @@ ext {
 
     libraryDescription = 'a database utils for android'
 
-    siteUrl = 'https://gitee.com/east12345/EastLibs'
-    gitUrl = 'https://gitee.com/east12345/EastLibs.git'
+    siteUrl = 'https://github.com/EastUp/DataBasePro'
+    gitUrl = 'https://github.com/EastUp/DataBasePro.git'
 
     libraryVersion = '0.1.1'        // 项目引用的版本号，比如compile 'com.yanzhenjie:andserver:1.0.1'中的1.0.1就是这里配置的。
 
