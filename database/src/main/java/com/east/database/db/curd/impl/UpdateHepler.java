@@ -10,11 +10,9 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Map;
 
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.ObservableEmitter;
 import io.reactivex.rxjava3.core.ObservableOnSubscribe;
-import io.reactivex.rxjava3.schedulers.Schedulers;
 
 
 /**
@@ -49,7 +47,7 @@ public class UpdateHepler<T> implements IUpdate<T> {
                 emitter.onNext(raw);
                 emitter.onComplete();
             }
-        }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        });
     }
 
 

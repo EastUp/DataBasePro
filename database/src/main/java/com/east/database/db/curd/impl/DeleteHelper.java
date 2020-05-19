@@ -5,11 +5,9 @@ import android.database.sqlite.SQLiteDatabase;
 import com.east.database.db.DaoUtil;
 import com.east.database.db.curd.IDelete;
 
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.ObservableEmitter;
 import io.reactivex.rxjava3.core.ObservableOnSubscribe;
-import io.reactivex.rxjava3.schedulers.Schedulers;
 
 
 /**
@@ -40,7 +38,7 @@ public class DeleteHelper<T> implements IDelete<T> {
                 emitter.onNext(raw);
                 emitter.onComplete();
             }
-        }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        });
     }
 
     @Override
@@ -52,6 +50,6 @@ public class DeleteHelper<T> implements IDelete<T> {
                 emitter.onNext(raw);
                 emitter.onComplete();
             }
-        }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        });
     }
 }

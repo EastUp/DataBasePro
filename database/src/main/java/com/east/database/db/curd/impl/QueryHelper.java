@@ -13,11 +13,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.ObservableEmitter;
 import io.reactivex.rxjava3.core.ObservableOnSubscribe;
-import io.reactivex.rxjava3.schedulers.Schedulers;
 
 
 /**
@@ -49,7 +47,7 @@ public class QueryHelper<T> implements IQuery<T> {
                 emitter.onNext(datas);
                 emitter.onComplete();
             }
-        }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        });
     }
 
     public Observable<List<T>> queryList(final String selection, final String... selectionArgs){
@@ -62,7 +60,7 @@ public class QueryHelper<T> implements IQuery<T> {
                 emitter.onNext(datas);
                 emitter.onComplete();
             }
-        }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        });
 
     }
 
@@ -80,7 +78,7 @@ public class QueryHelper<T> implements IQuery<T> {
                 emitter.onNext(datas);
                 emitter.onComplete();
             }
-        }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        });
     }
 
     public Observable<List<T>> rawQueryList(final String sql, final String[] selectionArgs){
@@ -92,7 +90,7 @@ public class QueryHelper<T> implements IQuery<T> {
                 emitter.onNext(datas);
                 emitter.onComplete();
             }
-        }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        });
     }
 
 
